@@ -1,0 +1,19 @@
+# Hidden files
+.vscode
+.venv
+.DS_Store
+__MACOSX
+
+# Python
+__pycache__
+.pyc
+
+# 3rd party
+spleeter*whl
+pretrained_models
+ffmpeg
+ffprobe
+
+# Pyinstaller
+build
+dist

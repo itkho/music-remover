@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+
+// WARNING: should be the exact same format than the "ChunkRequestDTO"
+message AudioRequest {
+  // TODO: add "format" and allow only certain type of format
+  string input_path = 1;
+  string output_path = 2;
+  bool remove_original = 3;
+}
+
+message GenericResponse {
+  bool succeeded = 1;
+  string error = 2;
+}
+
+service MusicRemover {
+  rpc RemoveMusic (AudioRequest) returns (GenericResponse);
+}

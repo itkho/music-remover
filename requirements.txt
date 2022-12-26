@@ -1,0 +1,5 @@
+pyinstaller==5.7.0
+requests==2.28.1
+protobuf==3.20.3
+grpcio==1.51.1
+grpcio-tools==1.44.0
