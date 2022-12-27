@@ -97,6 +97,6 @@ TODO
 
 ## 🎯 To-do list
 
-- [ ] 🧼 Clean: use strict version on package used in `requirements.txt`
+- [ ] 🧼 Clean: use strict version from `spleeter`
 - [ ] 🧼 Clean: use [static-ffmpeg](https://pypi.org/project/static-ffmpeg/)
-- [ ] 🆕 Feature: add progress status on downloading 3rd party
+- [ ] 🆕 Feature: add progress status or infos on downloading 3rd party
