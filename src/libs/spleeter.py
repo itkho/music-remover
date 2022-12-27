@@ -1,3 +1,4 @@
+import importlib
 import os
 import logging
 from scipy.io.wavfile import write
@@ -8,6 +9,12 @@ class Spleeter:
     separator = Separator("spleeter:2stems")
     audio_loader = AudioAdapter.default()
     __sample_rate = 44_100
+
+    @classmethod
+    def load_libs():
+        from spleeter.audio.adapter import AudioAdapter
+        from spleeter.separator import Separator
+
 
     @classmethod
     def __get_vocals(cls, audio_path: str):
@@ -33,8 +40,10 @@ class Spleeter:
         audio_path: path of the MP3 file
         output_path: complete path for the WAV output file
         """
+        if os.path.exists(output_path):
+            raise ValueError(f"The output file already exists: {output_path}")
         if not os.path.exists(audio_path):
-            return
+            raise ValueError(f"No audio file found at: {audio_path}")
 
         if (vocals := cls.__get_vocals(audio_path=audio_path)) is None:
             raise ValueError(f"Cannot get vocals from: {audio_path}")

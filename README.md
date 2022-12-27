@@ -59,7 +59,7 @@ python -m grpc_tools.protoc -Isrc/protobuf --python_out=src/protobuf --grpc_pyth
 
 _(add `arch -x86_64` just before `python` for Mac with Apple silicon)_
 ```bash
-PATH=$PATH:./third_party/<mac_OR_win>/ffmpeg python cli.py
+(arch -x86_64) python src/grpc_server.py
 ```
 
 
@@ -77,7 +77,7 @@ pyinstaller app.py --noconfirm --add-data "pretrained_models:pretrained_models" 
 pyinstaller app.py --noconfirm --add-data "pretrained_models;pretrained_models" --add-data "ff*;." --collect-data librosa
 ```
 
-Then, the next times, the `app.spec` can be use like this: _(add `arch -x86_64` at the beginning for Mac with Apple silicon)_
+Then, the next times, the `app.spec` can be use like this: _(add `arch -x86_64` at the beginning for Mac with apple silicon)_
 ```bash
 pyinstaller app.spec --noconfirm --clean
 ```

@@ -1,12 +1,9 @@
 import os
 import platform
-from typing import Optional
 import requests
 from zipfile import ZipFile
-import subprocess
 import tarfile
-import glob
-import shutil
+
 
 # TODO: handle Windows case
 is_mac_m1 = False
@@ -31,13 +28,9 @@ def download(url: str, output_file: str) -> None:
         file.write(requests.get(url).content)
 
 
-def unzip(zipname: str, output_path: Optional[str] = None, executable_filename: Optional[str] = None):
+def unzip(zipname: str):
     with ZipFile(zipname, "r") as zip_object:
-        zip_object.extractall(path=output_path)
-    if executable_filename:
-        if output_path:
-            executable_filename = f"{output_path}/{executable_filename}"
-        subprocess.call(["chmod", "u+x", executable_filename])
+        zip_object.extractall()
     os.remove(zipname)
 
 
@@ -70,42 +63,5 @@ def download_spleeter():
     )
 
 
-def download_ffmpeg():
-    if current_os == "mac":
-        download(
-            url="https://evermeet.cx/ffmpeg/getrelease/zip",
-            output_file="ffmpeg.zip"
-        )
-        unzip(
-            zipname="ffmpeg.zip",
-            output_path="third_party",
-            executable_filename="ffmpeg"
-        )
-        download(
-            url="https://evermeet.cx/ffmpeg/getrelease/ffprobe/zip",
-            output_file="ffprobe.zip"
-        )
-        unzip(
-            zipname="ffprobe.zip",
-            output_path="third_party",
-            executable_filename="ffprobe"
-        )
-    elif current_os == "win":
-        download(
-            url="https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip",
-            output_file="ffmpeg.zip"
-        )
-        unzip(
-            zipname="ffmpeg.zip",
-            output_path=".",
-        )
-        # Keep only ffmpeg and ffprobe
-        for file in glob.glob("ffmpeg*/bin/ff[mp][pr]*.exe"):
-            os.rename(file, os.path.join("third_party/win/ffmpeg", os.path.basename(file)))
-        shutil.rmtree(glob.glob("ffmpeg*")[0])
-
-
-
 if __name__ == "__main__":
     download_spleeter()
-    download_ffmpeg()
