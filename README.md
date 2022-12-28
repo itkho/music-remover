@@ -51,7 +51,7 @@ pip install -r requirements.txt
 
 Generate gRPC code:
 ```bash
-python -m grpc_tools.protoc -Isrc/protobuf --python_out=src/protobuf --grpc_python_out=src/protobuf src/protobuf/moubah.proto
+python -m grpc_tools.protoc --proto_path=src/protobuf --python_out=. --grpc_python_out=. src/protobuf/moubah.proto
 ```
 
 
@@ -59,7 +59,7 @@ python -m grpc_tools.protoc -Isrc/protobuf --python_out=src/protobuf --grpc_pyth
 
 _(add `arch -x86_64` just before `python` for Mac with Apple silicon)_
 ```bash
-(arch -x86_64) python src/grpc_server.py
+python app.py
 ```
 
 
@@ -74,7 +74,7 @@ pyinstaller app.py --noconfirm --add-data "pretrained_models:pretrained_models" 
 
 + on Windows:
 ```bash
-pyinstaller app.py --noconfirm --add-data "pretrained_models;pretrained_models" --add-data "ff*;." --collect-data librosa
+TODO
 ```
 
 Then, the next times, the `app.spec` can be use like this: _(add `arch -x86_64` at the beginning for Mac with apple silicon)_

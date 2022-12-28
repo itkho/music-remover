@@ -11,8 +11,9 @@ __pycache__
 # 3rd party
 spleeter*whl
 pretrained_models
-ffmpeg
-ffprobe
+
+# gRPC
+*_pb2*.py
 
 # Pyinstaller
 build

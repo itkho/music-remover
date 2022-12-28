@@ -1,6 +1,6 @@
 from multiprocessing import freeze_support
 
-from grpc_server import serve
+from src.grpc_server import serve
 
 
 if __name__ == "__main__":

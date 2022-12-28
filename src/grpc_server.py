@@ -1,11 +1,12 @@
 import static_ffmpeg
 static_ffmpeg.add_paths()
 
+from time import sleep
 import json
 import grpc
 from concurrent import futures
-from protobuf import moubah_pb2
-from protobuf import moubah_pb2_grpc
+import moubah_pb2
+import moubah_pb2_grpc
 
 class MusicRemoverServicer(moubah_pb2_grpc.MusicRemoverServicer):
     def RemoveMusic(self, request, context):
@@ -14,6 +15,9 @@ class MusicRemoverServicer(moubah_pb2_grpc.MusicRemoverServicer):
         from src.libs.spleeter import Spleeter
         
         try:
+            print(f"Remove music from: {request.input_path}")
+            # sleep(3)
+            # TODO: remove the WARNING logs from tensorflow
             Spleeter.remove_music(
                 audio_path=request.input_path,
                 output_path=request.output_path,
@@ -27,7 +31,9 @@ class MusicRemoverServicer(moubah_pb2_grpc.MusicRemoverServicer):
 
 def serve():
     # Spleeter's libs are imported here, before running the gRPC server because it takes time to load
+    print("Importing libraries...")
     from src.libs.spleeter import Spleeter
+    print("Libraries imported!")
     
     with open("src/protobuf/config.json") as config_file:
         config = json.load(config_file)
