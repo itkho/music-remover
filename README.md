@@ -1,4 +1,10 @@
-# 🔇 Music remover
+<h1 align="center">
+    🔇 Music remover</br>
+    🚧 (WIP) 🚧 </br>
+</h1>
+</br>
+
+## Description
 
 Removes the music from an audio file, so that only the voices remain.
 
