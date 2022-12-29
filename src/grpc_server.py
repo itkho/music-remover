@@ -10,6 +10,7 @@ import moubah_pb2_grpc
 
 class MusicRemoverServicer(moubah_pb2_grpc.MusicRemoverServicer):
     def RemoveMusic(self, request, context):
+        print(f"Get request for: {request.input_path}")
         # TODO: see if it's still true ⬇️
         # The import has to be local to avoid infinite loop on frozen app
         from src.libs.spleeter import Spleeter

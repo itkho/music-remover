@@ -42,8 +42,8 @@ class Spleeter:
         """
         if os.path.exists(output_path):
             raise ValueError(f"The output file already exists: {output_path}")
-        if not os.path.exists(audio_path):
-            raise ValueError(f"No audio file found at: {audio_path}")
+        if not os.path.isfile(audio_path):
+            raise ValueError(f"No audio file found at: '{audio_path}'")
 
         if (vocals := cls.__get_vocals(audio_path=audio_path)) is None:
             raise ValueError(f"Cannot get vocals from: {audio_path}")
