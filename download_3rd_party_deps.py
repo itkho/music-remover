@@ -51,7 +51,7 @@ def download_spleeter():
         unzip(
             zipname="spleeter.whl.zip",
         )
-        # TODO: remove the .whl file
+        # TODO: remove the .whl file once extracted
     # Spleeter ML model
     download(
         url="https://github.com/deezer/spleeter/releases/download/v1.4.0/2stems.tar.gz",

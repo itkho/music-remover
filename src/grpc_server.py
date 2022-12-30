@@ -9,6 +9,9 @@ import moubah_pb2
 import moubah_pb2_grpc
 
 class MusicRemoverServicer(moubah_pb2_grpc.MusicRemoverServicer):
+    def Ping(self, request, context):
+        return moubah_pb2.GenericResponse(succeeded=True)
+
     def RemoveMusic(self, request, context):
         print(f"Get request for: {request.input_path}")
         # TODO: see if it's still true ⬇️
