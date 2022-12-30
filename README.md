@@ -31,7 +31,7 @@ source .venv/bin/activate
 
 Upgrade pip: _(add `arch -x86_64` at the beginning for Mac with Apple silicon)_
 ```bash
-pip install --upgrade pip
+[arch -x86_64] pip install --upgrade pip
 ```
 
 Download 3rd party dependencies:
@@ -51,9 +51,10 @@ arch -x86_64 pip install --upgrade spleeter-2.3.0b0-cp38-cp38-macosx_11_0_x86_64
 pip install spleeter
 ```
 
+<!-- TODO: check if we really have to add arch -x86_64 everywhere -->
 Install other libraries: _(add `arch -x86_64` at the beginning for Mac with Apple silicon)_
 ```bash
-pip install -r requirements.txt
+[arch -x86_64] pip install -r requirements.txt
 ```
 
 Generate gRPC code:
@@ -66,7 +67,7 @@ python -m grpc_tools.protoc --proto_path=src/protobuf --python_out=. --grpc_pyth
 
 _(add `arch -x86_64` just before `python` for Mac with Apple silicon)_
 ```bash
-python app.py
+[arch -x86_64] python app.py
 ```
 
 
@@ -86,7 +87,7 @@ TODO
 
 Then, the next times, the `app.spec` can be use like this: _(add `arch -x86_64` at the beginning for Mac with apple silicon)_
 ```bash
-pyinstaller app.spec --noconfirm --clean
+[arch -x86_64] pyinstaller app.spec --noconfirm --clean
 ```
 
 
