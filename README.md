@@ -18,7 +18,8 @@ This API was built for [Moubah](https://github.com/karim-bouchez/moubah).
 
 ## 🔧 Setup
 
-> **_For Windows users:_** use [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+> **_For Windows users:_** use `python3.8.exe`
+<!-- [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) -->
 
 <!-- TODO: check if we cannot install requirements.txt first, then install the rest -->
 
