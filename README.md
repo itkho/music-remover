@@ -81,25 +81,13 @@ _(add `arch -x86_64` just before `python` for Mac with Apple silicon)_
 
 ## 📦 Create an executable file
 
-For the first time:
-
--   on Mac: _(add `arch -x86_64` at the beginning for Mac with Apple silicon)_
-
-```bash
-pyinstaller app.py --noconfirm --add-data "pretrained_models:pretrained_models" --add-data "ff*:." --collect-data librosa
-```
-
--   on Windows:
-
-```bash
-TODO
-```
-
-Then, the next times, the `app.spec` can be use like this: _(add `arch -x86_64` at the beginning for Mac with apple silicon)_
+_(add `arch -x86_64` at the beginning for Mac with apple silicon)_
 
 ```bash
 [arch -x86_64] pyinstaller app.spec --noconfirm --clean
 ```
+
+> Apple Silicon: the executable file doesn't currently work (_TODO: add the error thrown_)
 
 ## ☄️ Run the executable file
 
