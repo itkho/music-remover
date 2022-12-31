@@ -117,6 +117,7 @@ TODO
 
 ## 🎯 To-do list
 
+-   [ ] 🆕 fake a first request to avoid cold start and so the real first request is quick
 -   [ ] 🧼 Clean: use strict version from `spleeter`
--   [ ] 🧼 Clean: use [static-ffmpeg](https://pypi.org/project/static-ffmpeg/)
+-   [x] 🧼 Clean: use [static-ffmpeg](https://pypi.org/project/static-ffmpeg/)
 -   [ ] 🆕 Feature: add progress status or infos on downloading 3rd party

@@ -33,18 +33,17 @@ class MusicRemoverServicer(moubah_pb2_grpc.MusicRemoverServicer):
             return moubah_pb2.GenericResponse(succeeded=True)
 
 
-def serve():
+def serve(host: str, port: int):
     # Spleeter's libs are imported here, before running the gRPC server because it takes time to load
     print("Importing libraries...")
     from src.libs.spleeter import Spleeter
     print("Libraries imported!")
     
-    with open("src/protobuf/config.json") as config_file:
-        config = json.load(config_file)
+    # with open("../config.json") as config_file:
+    #     config = json.load(config_file)
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=1))
     moubah_pb2_grpc.add_MusicRemoverServicer_to_server(MusicRemoverServicer(), server)
-    # TODO: use specific port
-    server.add_insecure_port(f"{config['url']}:{config['port']}")
+    server.add_insecure_port(f"{host}:{port}")
     server.start()
     print("Server running...")
     server.wait_for_termination()
