@@ -91,7 +91,7 @@ _(add `arch -x86_64` at the beginning for Mac with apple silicon)_
 
 ## ☄️ Run the executable file
 
--   on Mac: _(no need for `arch -x86_64`)_
+-   ~~on Mac: _(no need for `arch -x86_64`)_~~ (not working right now)
 
 ```bash
 ./dist/app/app
