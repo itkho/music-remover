@@ -65,7 +65,7 @@ Install other libraries: _(add `arch -x86_64` at the beginning for Mac with Appl
 [arch -x86_64] pip install -r requirements.txt
 ```
 
-Generate gRPC code: _(add `arch -x86_64` at the beginning for Mac with Apple silicon)_
+~~Generate gRPC code:~~ TODO: store these files in Github
 
 ```bash
 [arch -x86_64] python -m grpc_tools.protoc --proto_path=src/protobuf --python_out=. --grpc_python_out=. src/protobuf/moubah.proto
