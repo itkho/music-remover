@@ -3,12 +3,16 @@ static_ffmpeg.add_paths()
 
 from time import sleep
 import json
+import os
 import grpc
 from concurrent import futures
 import moubah_pb2
 import moubah_pb2_grpc
 
 class MusicRemoverServicer(moubah_pb2_grpc.MusicRemoverServicer):
+    def GetProcess(self, request, context):
+        return moubah_pb2.Process(id=os.getpid())
+
     def Ping(self, request, context):
         return moubah_pb2.GenericResponse(succeeded=True)
 

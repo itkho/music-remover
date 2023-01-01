@@ -10,6 +10,10 @@ message AudioRequest {
   bool remove_original = 3;
 }
 
+message Process {
+  int32 id = 1;
+}
+
 message GenericResponse {
   bool succeeded = 1;
   string error = 2;
@@ -17,6 +21,7 @@ message GenericResponse {
 
 
 service MusicRemover {
+  rpc GetProcess (google.protobuf.Empty) returns (Process);
   rpc Ping (google.protobuf.Empty) returns (GenericResponse);
   rpc RemoveMusic (AudioRequest) returns (GenericResponse);
 }
