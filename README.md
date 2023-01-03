@@ -17,9 +17,9 @@ This API was built for [Moubah](https://github.com/karim-bouchez/moubah).
 
 ## 🔧 Setup
 
-> **_For Windows users:_** use `python3.8.exe`
+> _**On Windows:** use `.exe` (PowerShell recommended)_
 
-<!-- [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) -->
+> _**On Mac with Apple chip:** use `arch -x86_64` at the begin command when indicated_
 
 <!-- TODO: check if we cannot install requirements.txt first, then install the rest -->
 
