@@ -10,10 +10,21 @@ Removes the music from an audio file, so that only the voices remain.
 
 This API was built for [Moubah](https://github.com/karim-bouchez/moubah).
 
+</br>
+
 ## 💻 Tech Stack:
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)
+![gRPC](https://img.shields.io/badge/gRPC-244c5a.svg?style=for-the-badge&logoColor=white)
+
+</br>
+
+## 🔗 Prerequisite
+
+
+ + [Python 3.8](https://www.python.org/downloads/release/python-3810/)
+
+</br>
 
 ## 🔧 Setup
 
@@ -23,8 +34,7 @@ This API was built for [Moubah](https://github.com/karim-bouchez/moubah).
 
 <!-- TODO: check if we cannot install requirements.txt first, then install the rest -->
 
-Download [Python 3.8](https://www.python.org/downloads/release/python-3810/) if it's not already installed
-and check that everything is ok:
+Check that Python3.8 is correctly installed:
 
 ```bash
 python3.8 --version
@@ -32,11 +42,15 @@ python3.8 --version
 
 > You may just have to use `python.exe --version`, without `3.8` on Windows
 
-Make sure that the submodule is correctly imported:
+</br>
+
+If you came from [Moubah](https://github.com/karim-bouchez/moubah), make sure that the submodule is correctly imported:
 
 ```bash
 git submodule update --init
 ```
+
+</br>
 
 Create and active a virtual environment:
 
@@ -50,13 +64,17 @@ python3.8.exe -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-Upgrade pip: _(add `arch -x86_64` at the beginning for Mac with Apple silicon)_
+</br>
+
+Upgrade pip:
 
 ```bash
 [arch -x86_64] python[.exe] -m pip install --upgrade pip [--user]  # Not sure if --user is really needed
 ```
 
 > If `ModuleNotFoundError: No module named 'pip'` error --> run `python[.exe] -m ensurepip`
+
+</br>
 
 Download 3rd party dependencies:
 
@@ -66,6 +84,8 @@ python[.exe] download_3rd_party_deps.py
 ```
 
 > If `No such file or directory` error --> run `git submodule update --init`
+
+</br>
 
 Install Spleeter manually:
 
@@ -81,37 +101,43 @@ arch -x86_64 python -m pip install --upgrade spleeter-2.3.0b0-cp38-cp38-macosx_1
 python[.exe] -m pip install spleeter
 ```
 
+</br>
+
 <!-- TODO: check if we really have to add arch -x86_64 everywhere -->
 
-Install other libraries: _(add `arch -x86_64` at the beginning for Mac with Apple silicon)_
+Install other libraries:
 
 ```bash
 [arch -x86_64] python[.exe] -m pip install -r requirements.txt
 ```
 
-~~Generate gRPC code:~~ TODO: store these files in Github and move this command in ~ "Contribution"
+</br>
+
+~~Generate gRPC code:~~ TODO karim: store these files in Github and move this command in ~ "Contribution"
 
 ```bash
 [arch -x86_64] python[.exe] -m python -m grpc_tools.protoc --proto_path=src/protobuf --python_out=. --grpc_python_out=. src/protobuf/moubah.proto
 ```
 
-## 🐍 Run it with Python
+</br>
 
-_(add `arch -x86_64` just before `python` for Mac with Apple silicon)_
+## 🐍 Run it with Python
 
 ```bash
 [arch -x86_64] python[.exe] app.py
 ```
 
-## 📦 Create an executable file
+</br>
 
-_(add `arch -x86_64` at the beginning for Mac with apple silicon)_
+## 📦 Create an executable file
 
 ```bash
 [arch -x86_64] pyinstaller[.exe] app.spec --noconfirm --clean
 ```
 
-> Apple Silicon: the executable file doesn't currently work (_TODO: add the error thrown_)
+> **Apple Silicon**: the executable file doesn't currently work (_TODO karim: add the error thrown_)
+
+</br>
 
 ## ☄️ Run the executable file
 
@@ -126,6 +152,8 @@ _(add `arch -x86_64` at the beginning for Mac with apple silicon)_
 ```bash
 TODO
 ```
+
+</br>
 
 ## 🎯 To-do list
 
