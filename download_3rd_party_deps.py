@@ -10,7 +10,7 @@ is_mac_m1 = False
 if platform.system().lower() == "darwin":
     current_os = "mac"
     if platform.machine().lower() == "arm64": is_mac_m1 = True
-elif platform.system() == "windows":
+elif platform.system().lower() == "windows":
     current_os = "win"
 # TODO: support Linux because of WSL
 elif platform.system().lower() == "linux" and "microsoft" in platform.uname().release.lower():

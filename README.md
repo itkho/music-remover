@@ -21,8 +21,7 @@ This API was built for [Moubah](https://github.com/karim-bouchez/moubah).
 
 ## 🔗 Prerequisite
 
-
- + [Python 3.8](https://www.python.org/downloads/release/python-3810/)
+-   [Python 3.8](https://www.python.org/downloads/release/python-3810/)
 
 </br>
 
@@ -116,7 +115,7 @@ Install other libraries:
 ~~Generate gRPC code:~~ TODO karim: store these files in Github and move this command in ~ "Contribution"
 
 ```bash
-[arch -x86_64] python[.exe] -m python -m grpc_tools.protoc --proto_path=src/protobuf --python_out=. --grpc_python_out=. src/protobuf/moubah.proto
+[arch -x86_64] python[.exe] -m grpc_tools.protoc --proto_path=src/protobuf --python_out=. --grpc_python_out=. src/protobuf/moubah.proto
 ```
 
 </br>
@@ -124,7 +123,7 @@ Install other libraries:
 ## 🐍 Run it with Python
 
 ```bash
-[arch -x86_64] python[.exe] app.py
+[arch -x86_64] python[.exe] app.py --host localhost --port 46471s
 ```
 
 </br>
