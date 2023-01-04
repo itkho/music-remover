@@ -68,7 +68,7 @@ python3.8.exe -m venv .venv
 Upgrade pip:
 
 ```bash
-[arch -x86_64] python[.exe] -m pip install --upgrade pip [--user]  # Not sure if --user is really needed
+[arch -x86_64] python[.exe] -m pip install --upgrade pip
 ```
 
 > If `ModuleNotFoundError: No module named 'pip'` error --> run `python[.exe] -m ensurepip`
