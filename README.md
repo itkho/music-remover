@@ -128,6 +128,12 @@ Install other libraries:
 
 </br>
 
+## 🚀 Test it with Postman
+
+You can access to the workspace [here](https://www.postman.com/warped-moon-691802/workspace/moubah/overview)
+
+</br>
+
 ## 📦 Create an executable file
 
 ```bash
