@@ -123,7 +123,7 @@ Install other libraries:
 ## 🐍 Run it with Python
 
 ```bash
-[arch -x86_64] python[.exe] app.py --host localhost --port 46471s
+[arch -x86_64] python[.exe] app.py --host localhost --port 46471
 ```
 
 </br>
