@@ -1,6 +1,6 @@
 import importlib
 import os
-import logging
+from src.logger import logging
 from scipy.io.wavfile import write
 from spleeter.audio.adapter import AudioAdapter
 from spleeter.separator import Separator
@@ -23,8 +23,8 @@ class Spleeter:
             # Get the original sound
             waveform, _ = cls.audio_loader.load(path=audio_path, sample_rate=cls.__sample_rate)
         except StopIteration:
-            logging.info(f"The file {audio_path} does not seem to contain any sound.")
-            return None
+            logging.exception(f"The file {audio_path} does not seem to contain any sound.")
+            return
         else:
             # Perform the separation
             prediction = cls.separator.separate(waveform=waveform)
