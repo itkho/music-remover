@@ -16,40 +16,40 @@ a = Analysis(
 
         # TODO: use hook for this because path can defer depending the
         
-        # For UNIX (Mac/Linux)
+        # Uncomment for UNIX (Mac/Linux)
+        (
+            ".venv/lib/python3.8/site-packages/static_ffmpeg",
+            "static_ffmpeg"
+        ),
+        (
+            ".venv/lib/python3.8/site-packages/librosa",
+            "librosa"
+        ),
+        (
+            ".venv/lib/python3.8/site-packages/spleeter",
+            "spleeter"
+        )
+
+        # Uncomment for Windows
         # (
-        #     ".venv/lib/python3.8/site-packages/static_ffmpeg",
+        #     ".venv\Lib\site-packages\static_ffmpeg",
         #     "static_ffmpeg"
         # ),
         # (
-        #     ".venv/lib/python3.8/site-packages/librosa",
+        #     ".venv\Lib\site-packages\librosa",
         #     "librosa"
         # ),
         # (
-        #     ".venv/lib/python3.8/site-packages/spleeter",
+        #     ".venv\Lib\site-packages\spleeter",
         #     "spleeter"
         # )
-
-        # For Windows
-        (
-            ".venv\Lib\site-packages\static_ffmpeg",
-            "static_ffmpeg"
-        ),
-        (
-            ".venv\Lib\site-packages\librosa",
-            "librosa"
-        ),
-        (
-            ".venv\Lib\site-packages\spleeter",
-            "spleeter"
-        )
     ],
     hiddenimports=[
-        # Doesn't seem to work
-        #"static_ffmpeg",
-        #"librosa",
-        #"spleeter",
-        
+        # Doesn't seem to work
+        #"static_ffmpeg",
+        #"librosa",
+        #"spleeter",
+        
         "sklearn.metrics._pairwise_distances_reduction._datasets_pair",
         "sklearn.metrics._pairwise_distances_reduction._middle_term_computer"
     ],
