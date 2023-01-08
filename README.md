@@ -151,8 +151,6 @@ You can access to the workspace [here](https://www.postman.com/warped-moon-69180
 [arch -x86_64] pyinstaller[.exe] app.spec --noconfirm --clean
 ```
 
-> **Apple Silicon**: the executable file doesn't currently work (_TODO karim: add the error thrown_)
-
 </br>
 
 ## ☄️ Run the executable file
@@ -163,10 +161,17 @@ You can access to the workspace [here](https://www.postman.com/warped-moon-69180
 ./dist/app/app
 ```
 
+> **Apple Silicon**: the executable file doesn't currently work<br>
+> Error thrown: 
+> ```bash
+> malloc: Incorrect checksum for freed object 0x7f7a43d24280: probably modified after being freed.
+> malloc: *** set a breakpoint in malloc_error_break to debug
+> ```
+
 -   on Windows:
 
 ```bash
-TODO
+start .\dist\music-remover.exe
 ```
 
 </br>
