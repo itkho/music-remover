@@ -1,5 +1,21 @@
 # -*- mode: python ; coding: utf-8 -*-
 
+from PyInstaller.utils.hooks import collect_all
+
+datas = []
+binaries = []
+hiddenimports = []
+
+tmp_ret = collect_all('librosa')
+datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
+tmp_ret = collect_all('static_ffmpeg')
+datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
+tmp_ret = collect_all('spleeter')
+datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
+
+
+# from PyInstaller.utils.hooks import collect_data_files
+
 
 block_cipher = None
 
@@ -7,49 +23,14 @@ block_cipher = None
 a = Analysis(
     ['app.py'],
     pathex=[],
-    binaries=[],
-    datas=[
+    binaries=binaries,
+    datas=datas+[
         (
             "pretrained_models",
             "pretrained_models"
         ),
-
-        # TODO: use hook for this because path can defer depending the
-        
-        # Uncomment for UNIX (Mac/Linux)
-        (
-            ".venv/lib/python3.8/site-packages/static_ffmpeg",
-            "static_ffmpeg"
-        ),
-        (
-            ".venv/lib/python3.8/site-packages/librosa",
-            "librosa"
-        ),
-        (
-            ".venv/lib/python3.8/site-packages/spleeter",
-            "spleeter"
-        )
-
-        # Uncomment for Windows
-        # (
-        #     ".venv\Lib\site-packages\static_ffmpeg",
-        #     "static_ffmpeg"
-        # ),
-        # (
-        #     ".venv\Lib\site-packages\librosa",
-        #     "librosa"
-        # ),
-        # (
-        #     ".venv\Lib\site-packages\spleeter",
-        #     "spleeter"
-        # )
     ],
-    hiddenimports=[
-        # Doesn't seem to work
-        #"static_ffmpeg",
-        #"librosa",
-        #"spleeter",
-        
+    hiddenimports=hiddenimports+[
         "sklearn.metrics._pairwise_distances_reduction._datasets_pair",
         "sklearn.metrics._pairwise_distances_reduction._middle_term_computer"
     ],
