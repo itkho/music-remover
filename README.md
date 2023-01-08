@@ -158,7 +158,7 @@ You can access to the workspace [here](https://www.postman.com/warped-moon-69180
 -   ~~on Mac: _(no need for `arch -x86_64`)_~~ (not working right now)
 
 ```bash
-./dist/app/app
+./dist/app/app --host localhost --port 46471
 ```
 
 > **Apple Silicon**: the executable file doesn't currently work<br>
@@ -171,7 +171,7 @@ You can access to the workspace [here](https://www.postman.com/warped-moon-69180
 -   on Windows:
 
 ```bash
-start .\dist\music-remover.exe
+.\dist\music-remover.exe --host localhost --port 46471
 ```
 
 </br>
