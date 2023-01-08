@@ -4,7 +4,7 @@
 </h1>
 </br>
 
-## Description
+## ℹ️ Description
 
 Removes the music from an audio file, so that only the voices remain.
 
@@ -47,6 +47,17 @@ If you came from [Moubah](https://github.com/karim-bouchez/moubah), make sure th
 
 ```bash
 git submodule update --init
+```
+
+Otherwise, just clone the repo:
+
+```bash
+git clone git@github.com:karim-bouchez/music-remover.git
+```
+
+And make sure you are in the `music-remover` directory:
+```bash
+pwd
 ```
 
 </br>
