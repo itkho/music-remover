@@ -4,6 +4,5 @@ protobuf==3.19.6
 grpcio==1.51.1
 grpcio-tools==1.44.0
 static-ffmpeg==2.3
-logging==0.4.9.6
 
 # TODO? Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
