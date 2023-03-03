@@ -13,7 +13,7 @@ spleeter*whl
 pretrained_models
 
 # gRPC
-*_pb2*.py
+# *_pb2*.py
 
 # Pyinstaller
 build
