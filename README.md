@@ -155,6 +155,8 @@ You can access to the workspace [here](https://www.postman.com/warped-moon-69180
 
 ## ☄️ Run the executable file
 
+> First run can take up to 2 minutes 
+
 -   ~~on Mac: _(no need for `arch -x86_64`)_~~ (not working right now)
 
 ```bash
