@@ -13,6 +13,8 @@ tmp_ret = collect_all('static_ffmpeg')
 datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
 tmp_ret = collect_all('spleeter')
 datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
+tmp_ret = collect_all('scipy')
+datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
 
 block_cipher = None
 
@@ -26,8 +28,17 @@ a = Analysis(
             "pretrained_models",
             "pretrained_models"
         ),
+        (
+            "src",
+            "src"
+        ),
+        (
+            "moubah_pb2*",
+            "."
+        ),
     ],
     hiddenimports=hiddenimports+[
+        "google.protobuf.empty_pb2",
         "sklearn.metrics._pairwise_distances_reduction._datasets_pair",
         "sklearn.metrics._pairwise_distances_reduction._middle_term_computer"
     ],
