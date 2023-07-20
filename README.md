@@ -99,13 +99,13 @@ python[.exe] download_3rd_party_deps.py
 
 Install Spleeter manually:
 
--   for Mac with Apple silicon:
+-   for Mac with **Apple silicon**:
 
 ```bash
 arch -x86_64 python -m pip install --upgrade spleeter-2.3.0b0-cp38-cp38-macosx_11_0_x86_64.whl
 ```
 
--   for other platforms:
+-   for others:
 
 ```bash
 python[.exe] -m pip install spleeter
